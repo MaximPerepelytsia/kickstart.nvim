@@ -1,5 +1,142 @@
 # Neovim Plugins Guide
 
+## 🚀 **Hotkeys Guide - Copy/Cut/Paste Operations**
+
+### **1️⃣ Copy to Buffer/System Clipboard**
+
+#### **📝 Copy Lines:**
+- `yy` - Copy entire line to buffer
+- `"+yy` - Copy entire line to system clipboard
+
+#### **🔤 Copy Words:**
+- `yw` - Copy word to buffer
+- `"+yw` - Copy word to system clipboard
+
+#### **📄 Copy Paragraphs:**
+- `yap` - Copy entire paragraph to buffer
+- `"+yap` - Copy entire paragraph to system clipboard
+
+#### **🔲 Copy Blocks:**
+- `yi(` - Copy inside parentheses to buffer
+- `yi{` - Copy inside braces to buffer
+- `yi"` - Copy inside quotes to buffer
+- `"+yi(` - Copy inside parentheses to system clipboard
+- `"+yi{` - Copy inside braces to system clipboard
+- `"+yi"` - Copy inside quotes to system clipboard
+
+### **2️⃣ Paste from Buffer/System Clipboard**
+
+#### **📋 Paste Operations:**
+- `p` - Paste from buffer after cursor
+- `P` - Paste from buffer before cursor
+- `"+p` - Paste from system clipboard after cursor
+- `"+P` - Paste from system clipboard before cursor
+
+### **💡 Quick Reference:**
+- **Buffer**: `y` + motion (e.g., `yy`, `yw`, `yap`)
+- **System**: `"+y` + motion (e.g., `"+yy`, `"+yw`, `"+yap`)
+- **Paste**: `p` (buffer) or `"+p` (system clipboard)
+
+### **3️⃣ Select Text First, Then Copy/Cut**
+
+#### **🎯 Visual Mode Selection:**
+- `v` - Enter character-wise visual mode
+- `V` - Enter line-wise visual mode
+- `Ctrl+v` - Enter block-wise visual mode
+- `Esc` - Exit visual mode
+
+#### **📝 Select and Copy Lines:**
+- `V` then `y` - Select line and copy to buffer
+- `V` then `"+y` - Select line and copy to system clipboard
+- `V` then `j` then `y` - Select multiple lines and copy
+
+#### **🔤 Select and Copy Words:**
+- `vw` then `y` - Select word and copy to buffer
+- `vw` then `"+y` - Select word and copy to system clipboard
+- `v2w` then `y` - Select 2 words and copy
+
+#### **🔲 Select and Copy Blocks:**
+- `v` then `%` then `y` - Select from cursor to matching bracket and copy
+- `v` then `i(` then `y` - Select inside parentheses and copy
+- `v` then `i{` then `y` - Select inside braces and copy
+- `v` then `i"` then `y` - Select inside quotes and copy
+
+#### **🔤 Select by Symbols:**
+- `v` then `%` - Select from cursor to matching bracket/parenthesis
+- `v` then `a(` - Select around parentheses (including them)
+- `v` then `i(` - Select inside parentheses (excluding them)
+- `v` then `a{` - Select around braces (including them)
+- `v` then `i{` - Select inside braces (excluding them)
+- `v` then `a[` - Select around square brackets (including them)
+- `v` then `i[` - Select inside square brackets (excluding them)
+- `v` then `a"` - Select around double quotes (including them)
+- `v` then `i"` - Select inside double quotes (excluding them)
+- `v` then `a'` - Select around single quotes (including them)
+- `v` then `i'` - Select inside single quotes (excluding them)
+- `v` then `a` - Select around any delimiter
+- `v` then `i` - Select inside any delimiter
+
+#### **📏 Select and Copy by Motion:**
+- `v` then `5j` then `y` - Select 5 lines down and copy
+- `v` then `5l` then `y` - Select 5 characters right and copy
+- `v` then `$` then `y` - Select from cursor to end of line and copy
+- `v` then `^` then `y` - Select from cursor to start of line and copy
+
+#### **✂️ Select and Cut:**
+- `V` then `d` - Select line and cut to buffer
+- `v` then `w` then `d` - Select word and cut to buffer
+- `v` then `i(` then `d` - Select inside parentheses and cut
+
+#### **💡 Selection Tips:**
+- **Extend Selection**: Use `j`, `k`, `h`, `l` to expand selection
+- **Switch End**: Press `o` to switch cursor to other end of selection
+- **Block Mode**: Use `Ctrl+v` for rectangular selections
+- **Quick Exit**: Press `Esc` or `v` to exit visual mode
+
+### **4️⃣ Dropdown and Selection Lists**
+
+#### **🎯 Telescope Dropdowns:**
+- **`<leader>ff`** - Open file finder dropdown
+- **`<leader>fg`** - Open live grep dropdown
+- **`<leader>fb`** - Open buffer list dropdown
+- **`<leader>fh`** - Open help tags dropdown
+
+#### **⌨️ Navigation in Dropdowns:**
+- **`j`/`k`** - Move up/down in the list
+- **`<CR>` (Enter)** - Select highlighted item
+- **`<C-j>`/`<C-k>`** - Move up/down faster
+- **`<C-u>`/`<C-d>`** - Page up/down
+- **`gg`** - Go to top of list
+- **`G`** - Go to bottom of list
+
+#### **🔍 Filtering in Dropdowns:**
+- **Type text** - Filter results as you type
+- **`<C-/>`** - Toggle fuzzy finder help
+- **`<C-t>`** - Open in new tab
+- **`<C-v>`** - Open in vertical split
+- **`<C-s>`** - Open in horizontal split
+
+#### **📋 LSP Completion Dropdowns:**
+- **`<C-n>`/`<C-p>`** - Navigate through suggestions
+- **`<C-y>`** - Accept current suggestion
+- **`<C-e>`** - Close completion menu
+- **`<C-space>`** - Trigger completion manually
+
+#### **🎨 UI-Select Dropdowns:**
+- **`<leader>ss`** - Open UI-select dropdown
+- **`j`/`k`** - Navigate options
+- **`<CR>`** - Select option
+- **`<Esc>`** - Cancel selection
+
+#### **💡 Pro Tips for Dropdowns:**
+- **Fuzzy Search**: Type partial text to quickly find items
+- **Quick Exit**: Press `Esc` to close any dropdown
+- **Keyboard Navigation**: Use `j`/`k` for precise control
+- **Mouse Support**: Click on items if you prefer mouse
+- **History**: Recent selections appear at the top
+
+## 🔌 **Plugin Information**
+
 This document describes the additional plugins added to your kickstart.nvim configuration, including hotkeys, setup instructions, and usage examples.
 
 ## 🎨 Theme & Visual Enhancements
