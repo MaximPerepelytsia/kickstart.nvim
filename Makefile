@@ -26,10 +26,10 @@ install: backup
 
 backup:
 	@if [ ! -d "$(NVIM_CONFIG_DIR)" ] || [ -z "$$(ls -A $(NVIM_CONFIG_DIR) 2>/dev/null)" ]; then \
-		echo "Warning: $(NVIM_CONFIG_DIR) does not exist or is empty. Nothing to backup."; \
-		exit 1; \
+		echo "Info: $(NVIM_CONFIG_DIR) does not exist or is empty. Nothing to backup."; \
+	else \
+		echo "Creating backup archive: $(BACKUP_NAME)..."; \
+		tar -czf $(BACKUP_NAME) -C $(HOME)/.config nvim; \
+		echo "Backup created: $(BACKUP_NAME)"; \
 	fi
-	@echo "Creating backup archive: $(BACKUP_NAME)..."
-	@tar -czf $(BACKUP_NAME) -C $(HOME)/.config nvim
-	@echo "Backup created: $(BACKUP_NAME)"
 

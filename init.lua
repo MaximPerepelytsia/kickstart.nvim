@@ -467,6 +467,27 @@ require('lazy').setup({
     end,
   },
 
+  { -- Harpoon (File Navigation)
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local harpoon = require 'harpoon'
+      harpoon:setup()
+    end,
+  },
+
+  { -- Undotree
+    'mbbill/undotree',
+    cmd = 'UndotreeToggle',
+  },
+
+  { -- Git (Fugitive)
+    'tpope/vim-fugitive',
+    cmd = { 'Git', 'G', 'Gread', 'Gwrite', 'Ggrep', 'GMove', 'GDelete', 'GBrowse', 'GRemove', 'GRename', 'Glgrep', 'Gedit' },
+    ft = { 'fugitive' },
+  },
+
   -- LSP Plugins
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins

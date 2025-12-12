@@ -61,6 +61,45 @@ keymap('n', '<leader>ps', function()
   require('telescope.builtin').live_grep()
 end, { desc = 'Search for text in project (grep)' })
 
+-- [[ Harpoon (File Navigation) ]]
+-- Load Harpoon lazily when keymaps are used
+-- NOTE: <C-h> will override the window navigation keymap (move focus to left window)
+keymap('n', '<leader>a', function()
+  local harpoon = require 'harpoon'
+  harpoon:list():append()
+end, { desc = 'Add current file to Harpoon' })
+
+keymap('n', '<C-e>', function()
+  local harpoon = require 'harpoon'
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = 'Toggle Harpoon quick menu' })
+
+keymap('n', '<C-h>', function()
+  local harpoon = require 'harpoon'
+  harpoon:list():select(1)
+end, { desc = 'Navigate to Harpoon file 1' })
+
+keymap('n', '<C-t>', function()
+  local harpoon = require 'harpoon'
+  harpoon:list():select(2)
+end, { desc = 'Navigate to Harpoon file 2' })
+
+keymap('n', '<C-n>', function()
+  local harpoon = require 'harpoon'
+  harpoon:list():select(3)
+end, { desc = 'Navigate to Harpoon file 3' })
+
+keymap('n', '<C-s>', function()
+  local harpoon = require 'harpoon'
+  harpoon:list():select(4)
+end, { desc = 'Navigate to Harpoon file 4' })
+
+-- [[ Undotree ]]
+keymap('n', '<leader>u', '<cmd>UndotreeToggle<CR>', { desc = 'Toggle undo tree' })
+
+-- [[ Git (Fugitive) ]]
+keymap('n', '<leader>gs', '<cmd>Git<CR>', { desc = 'Open Git status' })
+
 -- [[ Optional: Disable Arrow Keys ]]
 -- Uncomment to enforce using hjkl for navigation
 -- keymap('n', '<left>', '<cmd>echo "Use h to move!!"<CR>', { desc = 'Disable left arrow' })
