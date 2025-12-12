@@ -106,6 +106,31 @@ nvim
 That's it! Lazy will install all the plugins you have. Use `:Lazy` to view
 the current plugin status. Hit `q` to close the window.
 
+#### Installing LSP Servers
+
+This configuration includes LSP support for Go, Python, and Java. The LSP servers are automatically installed via Mason when you first open a file of the respective type, or you can install them manually:
+
+**Automatic Installation:**
+- Open a `.go`, `.py`, or `.java` file and Mason will prompt you to install the required LSP server
+- Accept the prompt to install
+
+**Manual Installation:**
+1. Open Neovim
+2. Run `:Mason` to open the Mason UI
+3. Navigate to the LSP servers section
+4. Install the following servers:
+   - `gopls` - Go language server
+   - `pyright` - Python language server
+   - `jdtls` - Java language server (Eclipse JDT Language Server)
+
+**Verifying Installation:**
+- After installation, open a file of the respective language
+- Run `:LspInfo` to verify the LSP server is running
+- You should see autocompletion, diagnostics, and other LSP features working
+
+> [!NOTE]
+> For Java development, `jdtls` provides basic LSP support. For advanced Java features, consider using the `nvim-jdtls` plugin for better integration.
+
 #### Read The Friendly Documentation
 
 Read through the `init.lua` file in your configuration folder for more
