@@ -956,6 +956,18 @@ require('lazy').setup({
         styles = {
           comments = { italic = false }, -- Disable italics in comments
         },
+        on_highlights = function(hl, c)
+          -- Customize line numbers with higher contrast
+          -- Line numbers above and below current line - high contrast (almost same as cursor line)
+          hl.LineNr = {
+            fg = '#f0f0f0', -- Very bright gray/white for high contrast line numbers
+          }
+          -- Current line number - maximum contrast
+          hl.CursorLineNr = {
+            fg = '#ffffff', -- Pure white for current line number (maximum contrast)
+            bold = true, -- Make current line number stand out
+          }
+        end,
       }
 
       -- Load the colorscheme here.
