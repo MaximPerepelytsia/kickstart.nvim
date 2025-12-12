@@ -100,6 +100,14 @@ keymap('n', '<leader>u', '<cmd>UndotreeToggle<CR>', { desc = 'Toggle undo tree' 
 -- [[ Git (Fugitive) ]]
 keymap('n', '<leader>gs', '<cmd>Git<CR>', { desc = 'Open Git status' })
 
+-- [[ Completion (nvim-cmp/blink.cmp) ]]
+-- NOTE: These keymaps are configured in blink.cmp plugin settings
+-- The 'default' preset in blink.cmp provides these mappings:
+--   <C-p> / <C-n> or <Up> / <Down>: Select previous/next completion item
+--   <C-y>: Confirm completion selection
+--   <C-Space>: Open completion menu or toggle documentation
+-- These are active in Insert mode when the completion menu is visible
+
 -- [[ Optional: Disable Arrow Keys ]]
 -- Uncomment to enforce using hjkl for navigation
 -- keymap('n', '<left>', '<cmd>echo "Use h to move!!"<CR>', { desc = 'Disable left arrow' })
