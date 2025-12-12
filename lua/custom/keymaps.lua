@@ -48,10 +48,18 @@ keymap('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 -- keymap('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
 
 -- [[ Telescope (Fuzzy Finder) ]]
-local builtin = require 'telescope.builtin'
-keymap('n', '<leader>pf', builtin.find_files, { desc = 'Find files in project' })
-keymap('n', '<C-p>', builtin.git_files, { desc = 'Find files in git repository' })
-keymap('n', '<leader>ps', builtin.live_grep, { desc = 'Search for text in project (grep)' })
+-- Load Telescope lazily when keymaps are used
+keymap('n', '<leader>pf', function()
+  require('telescope.builtin').find_files()
+end, { desc = 'Find files in project' })
+
+keymap('n', '<C-p>', function()
+  require('telescope.builtin').git_files()
+end, { desc = 'Find files in git repository' })
+
+keymap('n', '<leader>ps', function()
+  require('telescope.builtin').live_grep()
+end, { desc = 'Search for text in project (grep)' })
 
 -- [[ Optional: Disable Arrow Keys ]]
 -- Uncomment to enforce using hjkl for navigation
