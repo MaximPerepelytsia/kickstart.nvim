@@ -205,6 +205,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+-- [[ Load Custom Keymaps ]]
+-- Additional keymaps are defined in lua/custom/keymaps.lua
+-- This allows for better organization and easier customization
+require 'custom.keymaps'
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
