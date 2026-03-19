@@ -1,5 +1,3 @@
-.PHONY: help install backup
-
 # Default target
 .DEFAULT_GOAL := help
 

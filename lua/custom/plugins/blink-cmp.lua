@@ -62,10 +62,12 @@ return {
         -- <c-space>: Open menu or open docs if already open
         -- <c-n>/<c-p> or <up>/<down>: Select next/previous item
         -- <c-e>: Hide menu
-        -- <c-k>: Toggle signature help
+        -- <c-k>: Toggle signature help (remapped to <c-h> below)
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
         preset = 'default',
+        ['<C-h>'] = { 'show_signature', 'hide_signature', 'fallback' },
+        ['<C-k>'] = {},
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps

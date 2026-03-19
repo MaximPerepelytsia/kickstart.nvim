@@ -38,9 +38,30 @@
 | `<C-s>` | Normal | Navigate to Harpoon file 4 |
 
 ## Undotree
+### Opening
 | Keymap | Mode | Description |
 |--------|------|-------------|
-| `<leader>u` | Normal | Toggle undo tree |
+| `<leader>u` | Normal | Toggle undotree panel |
+
+### Navigation (inside undotree panel)
+| Keymap | Mode | Description |
+|--------|------|-------------|
+| `j` / `k` | Normal | Move to next/previous undo state |
+| `J` / `K` | Normal | Move to next/previous undo state and apply it immediately |
+| `<CR>` or `o` | Normal | Apply selected undo state to the buffer |
+| `u` | Normal | Undo (same as in normal buffer) |
+| `<C-r>` | Normal | Redo (same as in normal buffer) |
+| `p` | Normal | Show diff of selected state in preview window |
+| `P` | Normal | Toggle auto-preview (diff updates as you navigate) |
+| `q` | Normal | Close undotree panel |
+| `?` | Normal | Show help |
+
+### Tips
+- Press `<leader>u` to open the undotree panel — focus moves into it automatically
+- Navigate with `j`/`k` to browse states; press `<CR>` to restore the buffer to that state
+- Use `J`/`K` to navigate and apply in one step
+- The diff preview window (bottom right) shows what changed at the selected node
+- Each branch point in the tree represents a place where you edited after undoing — undotree lets you recover those otherwise-lost branches
 
 ## Git (Fugitive)
 | Keymap | Mode | Description |
@@ -52,15 +73,15 @@
 ### Code Navigation
 | Keymap        | Mode   | Description               |
 | ------------- | ------ | ------------------------- |
-| `<C-gd>`      | Normal | Go to definition (where function/variable is defined) |
-| `<C-gD>`      | Normal | Go to declaration (header/interface declaration) |
+| `grd`         | Normal | Go to definition (where function/variable is defined) |
+| `grD`         | Normal | Go to declaration (header/interface declaration) |
 | `grr`         | Normal | Find all references (show all usages) |
 | `gri`         | Normal | Go to implementation (where abstract type is implemented) |
 | `grt`         | Normal | Go to type definition |
 | `gO`          | Normal | Open document symbols (fuzzy find symbols in current file) |
 | `gW`          | Normal | Open workspace symbols (fuzzy find symbols in project) |
 | `K`           | Normal | Show hover information (documentation) |
-| `<C-h>`       | Insert | Show signature help (function parameters) |
+| `<C-h>`       | Insert | Toggle signature help (function parameters) |
 
 ### Code Actions
 | Keymap        | Mode   | Description               |
@@ -80,13 +101,13 @@
 
 1. **Go to Definition:**
    - Place your cursor on a function name (or any symbol)
-   - Press `<C-gd>` to jump to where it's defined
+   - Press `grd` to jump to where it's defined
    - This opens the definition in the current window
    - Use `<C-t>` to jump back to your previous location
 
 2. **Go to Declaration:**
    - Place your cursor on a function name
-   - Press `<C-gD>` to jump to its declaration (useful for C/C++ headers)
+   - Press `grD` to jump to its declaration (useful for C/C++ headers)
    - Declaration is different from definition (declaration = interface, definition = implementation)
 
 3. **Find All References:**
@@ -108,8 +129,8 @@
 ### Tips
 - After jumping to a definition, use `<C-t>` to go back to your previous location
 - Use `grr` to find all usages of a function before refactoring
-- `<C-gd>` and `<C-gD>` may show the same location in some languages (like Python, JavaScript)
-- In C/C++, `<C-gD>` typically goes to the header file, while `<C-gd>` goes to the implementation
+- `grD` is only meaningful in C/C++ (jumps to the header declaration); in Go, Python, JavaScript it is **not supported** — use `grt` to jump to a type definition instead
+- In C/C++, `grD` goes to the header file, while `grd` goes to the implementation
 - The LSP must be running for these features to work (check with `:LspInfo`)
 
 ## Completion (nvim-cmp)

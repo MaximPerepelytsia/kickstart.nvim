@@ -118,6 +118,17 @@ keymap('n', '<leader>gs', '<cmd>Git<CR>', { desc = 'Open Git status' })
 -- [[ Custom Keymaps ]]
 -- Add your custom keymaps below this line
 
+-- [[ Undo/Redo ]]
+-- Native vim commands (no custom keymaps needed):
+--   u        : Undo last change
+--   <C-r>    : Redo (undo the undo)
+--   <leader>u: Toggle visual undo tree (Undotree plugin)
+
+-- [[ Buffer Navigation ]]
+keymap('n', '[b', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+keymap('n', ']b', '<cmd>bnext<CR>', { desc = 'Next buffer' })
+keymap('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[B]uffer [D]elete' })
+
 -- Example: Save file with Ctrl+S
 -- keymap({ 'n', 'i', 'v' }, '<C-s>', '<cmd>w<CR>', { desc = 'Save file' })
 
