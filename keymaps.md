@@ -8,6 +8,12 @@
 |--------|------|-------------|
 | `<leader>pv` | Normal | Open file explorer (Ex command) |
 
+## Editing
+| Keymap | Mode | Description |
+|--------|------|-------------|
+| `<A-j>` | Visual | Move selected lines down (and re-indent) |
+| `<A-k>` | Visual | Move selected lines up (and re-indent) |
+
 ## Scrolling
 | Keymap | Mode | Description |
 |--------|------|-------------|

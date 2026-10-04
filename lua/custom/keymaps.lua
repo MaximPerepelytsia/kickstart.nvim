@@ -151,10 +151,12 @@ keymap('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[B]uffer [D]elete' })
 -- keymap('v', '<', '<gv', { desc = 'Indent left and reselect' })
 -- keymap('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
--- Example: Move lines up and down
+-- [[ Move Selected Lines ]]
+keymap('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
+keymap('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+
+-- Example: Move a single line up and down
 -- keymap('n', '<A-j>', '<cmd>m .+1<CR>==', { desc = 'Move line down' })
 -- keymap('n', '<A-k>', '<cmd>m .-2<CR>==', { desc = 'Move line up' })
--- keymap('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
--- keymap('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 
 return {}
